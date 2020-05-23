@@ -26,6 +26,7 @@
 
 import path from 'path';
 import gulp from 'gulp';
+import concat from 'gulp-concat';
 import del from 'del';
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
@@ -97,8 +98,9 @@ gulp.task('styles', () => {
     // Concatenate and minify styles
     .pipe($.if('*.css', $.cssnano()))
     .pipe($.size({title: 'styles'}))
+    .pipe(concat('style.css'))
     .pipe($.sourcemaps.write('./'))
-    .pipe(gulp.dest('dist/styles'))
+    .pipe(gulp.dest('dist/styles/'))
     .pipe(gulp.dest('.tmp/styles'));
 });
 
