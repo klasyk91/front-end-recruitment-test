@@ -1,0 +1,3 @@
+[submodule "submodule"]
+	path = submodule
+	url = https://github.com/klasyk91/front-end-recruitment-test-submodule.git
