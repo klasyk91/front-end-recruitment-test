@@ -15,7 +15,14 @@ I have changed the CSS folder structure and improved the `gulpfile.babel.js` fil
 ---
 
 ## Regarding Task 2
-TBC
+The form has been implemented according to the PNG file called `checkout.png`.
+I used the following tools: Adobe Photoshop (eyedropper, slice, text) to take all the needed details about the design.
+I have added a separate file for FORM styles in `/app/styles/sass/checkout_form.scss`.
+I have prepared all the structure/skeleton of the checkout form in `submodule.html`.
+The RWD has been implemented too.
+It has been tested on Firefox, Safari, Chrome and Safari Mobile & Chrome mobile.
+Regarding `SELECT` field, in this case field called `Country`, there is no solution to improve the styles according to the design without using JavaScript. All the web browser just rendering this type of field with their own rules/styles. We are not able to overtight that settings via CSS.
+If it's needed I can improve the select field by using jQuery library called [SELECT2](https://select2.org/) in the future.
 
 ---
 
