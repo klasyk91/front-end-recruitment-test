@@ -1,0 +1,67 @@
+$colorError: #e60000;
+$colorErrorShadow: #b30000;
+$colorWhite: #ffffff;
+$button: #6bd400;
+$buttonShadow: #5cb204;
+
+#check_out_form {
+  .textfield, .select {
+    .error {
+      font-size: 12px;
+      line-height: 12px;
+      font-weight: 700;
+      color: $colorWhite;
+      background-color: $colorError;
+      position: absolute;
+      display: block;
+      top: -10px;
+      right: 14px;
+      border-radius: 4px;
+      padding: 3px 5px;
+      box-shadow: 0px 2px 0px 0px $colorErrorShadow;
+      @media(max-width: 481px) {
+        font-size: 10px;
+        line-height: 10px;
+        padding: 3px;
+        box-shadow: 0px 1px 0px 0px $colorErrorShadow;
+        top: -9px;
+        right: 5px;
+      }
+    }
+  }
+  .input, .select {
+    &:after {
+      visibility: hidden;
+      opacity: 0;
+      content: '';
+      background-image: url('../images/svg-icons/tick.svg');
+      background-position: center center;
+      background-color: $button;
+      background-size: 12px;
+      width: 18px;
+      height: 18px;
+      background-repeat: no-repeat;
+      position: absolute;
+      display: block;
+      top: -10px;
+      right: 14px;
+      border-radius: 4px;
+      padding: 5px;
+      box-shadow: 0px 2px 0px 0px $buttonShadow;
+      transition: opacity 0.3s linear, visibility 0.3s linear;
+      @media(max-width: 481px) {
+        background-size: 10px;
+        width: 14px;
+        height: 14px;
+        top: -8px;
+        right: 5px;
+      }
+    }
+    &.pass-message {
+      &:after {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -112,7 +112,7 @@ gulp.task('scripts', () =>
       // Note: Since we are not using useref in the scripts build pipeline,
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
-      './app/scripts/main.js'
+      './app/scripts/main.js',
       // Other scripts
     ])
       .pipe($.newer('.tmp/scripts'))
@@ -220,6 +220,12 @@ gulp.task('pagespeed', cb =>
 gulp.task('copy-sw-scripts', () => {
   return gulp.src(['node_modules/sw-toolbox/sw-toolbox.js', 'app/scripts/sw/runtime-caching.js'])
     .pipe(gulp.dest('dist/scripts/sw'));
+});
+
+// Copy js form validation file
+gulp.task('copy', () => {
+  return gulp.src('app/scripts/form-validate/form-validate.js')
+    .pipe(gulp.dest('dist/scripts/form-validate/'));
 });
 
 // See http://www.html5rocks.com/en/tutorials/service-worker/introduction/ for

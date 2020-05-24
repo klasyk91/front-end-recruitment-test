@@ -22,6 +22,7 @@ $placeholder: #9b9b9b;
 $label: #515356;
 $buttonActive: #335CFF;
 $buttonActiveShadow: #1334BA;
+$colorError: #e60000;
 
 #checkoutTab {
   padding: 50px 0;
@@ -111,12 +112,18 @@ $buttonActiveShadow: #1334BA;
               background-color: $colorWhite;
               border-radius: 4px;
               box-shadow: 0px 2px 0px 0px $fieldShadow;
+              position: relative;
               label {
                 font-size: 12px;
                 line-height: 16px;
                 font-weight: 700;
                 color: $label;
                 display: block;
+                &:after {
+                  content: ' *';
+                  display: inline;
+                  color: $colorError;
+                }
               }
             }
             .select {
@@ -182,6 +189,36 @@ $buttonActiveShadow: #1334BA;
                 }
               }
             }
+            select {
+              &::-ms-expand {
+                display: none; 
+              } 
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              -ms-appearance: none;
+              appearance: none;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              border: 0;
+              width: 100%;
+              -webkit-padding-end: 0;
+              -moz-padding-end: 0;
+              -webkit-padding-start: 0;
+              -moz-padding-start: 0;
+              background-color: $colorWhite;
+              background-image: url('../images/svg-icons/down-arrow.svg');
+              background-position: top right;
+              background-repeat: no-repeat;
+              background-size: 12px 12px;
+              font-size: 16px;
+              line-height: 18px;
+              color: $colorBlack;
+              margin: 0 !important;
+              padding: 0 !important;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
             .button-submit {
               grid-column: 1 / -1;
               margin-top: 20px;
@@ -226,35 +263,24 @@ $buttonActiveShadow: #1334BA;
                 }
               }
             }
-            select {
-              &::-ms-expand {
-                display: none; 
-              } 
-              -webkit-appearance: none;
-              -moz-appearance: none;
-              -ms-appearance: none;
-              appearance: none;
-              -webkit-user-select: none;
-              -moz-user-select: none;
-              border: 0;
-              width: 100%;
-              -webkit-padding-end: 0;
-              -moz-padding-end: 0;
-              -webkit-padding-start: 0;
-              -moz-padding-start: 0;
-              background-color: $colorWhite;
-              background-image: url('../images/svg-icons/down-arrow.svg');
-              background-position: top right;
-              background-repeat: no-repeat;
-              background-size: 12px 12px;
-              font-size: 16px;
+            .message-status {
+              opacity: 0;
+              visibility: hidden;
+              transition: opacity 0.3s linear, visibility 0.3s linear;
+              grid-column: 1/-1;
+              text-align: center;
+              font-weight: 700;
+              font-size: 18px;
               line-height: 18px;
-              color: $colorBlack;
-              margin: 0 !important;
-              padding: 0 !important;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
+              color: $buttonShadow;
+              @media(max-width: 481px) {
+                font-size: 12px;
+                line-height: 12px;
+              }
+              &.sent {
+                visibility: visible;
+                opacity: 1;
+              }
             }
           }
         }
