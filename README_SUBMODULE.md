@@ -1,5 +1,8 @@
 # Snowdog Front-end Recruitment test
 
+## Working DEMO (Task 1-3)
+Direct link to working [DEMO](https://kubson.ovh/snow_dog/)
+
 ## About
 Please clone the repo by using `git clone` command.<br />
 Please use `yarn install` command to install all the needed libraries and dependencies.<br />
@@ -31,4 +34,33 @@ If it's needed I can improve the select field by using jQuery library called [SE
 
 ## Regarding Task 3
 I used [jQuery Validation](https://jqueryvalidation.org/) plugin to implement form validation.<br />
-All the JS code for validation we can find in `/app/scripts/form-validate/form-validate.js`.
+I used [Input Mask](https://github.com/RobinHerbots/Inputmask) plugin to implement mask for credit card number, expiration date, phone number fields to improve user experience (it's more user friendly).<br />
+All the JS code for validation you can find in `/app/scripts/form-validate/form-validate.js`.
+
+---
+
+## About validation
+`First name` & `Last Name` fields allows for using:
+* Polish letters
+* Only letters
+* First letter is sutmatically change into uppercase
+
+`Email` field allows for using:
+* Valid email address according regular expression
+
+`Phone Number` field allows for using:
+* Digits, brackets, spaces nad dashes (thanks to mask we can fill out with digits only)
+* Valid phone number according regular expression
+* Input mask helps to fill out this field
+
+`Credit Card Number` field allows for using:
+* Digits, spaces and dashes (thanks to mask we can fill out with digits only)
+* Valid credit card number according regular expression, it starts with 4
+* Input mask helps to fill out this field
+
+`Security Code` field allows for using:
+* Only 3 digits
+
+`Expiration Date` field allows for using:
+* Digits, spaces and slash (thanks to mask we can fill out with digits only)
+* Input mask helps to fill out this field

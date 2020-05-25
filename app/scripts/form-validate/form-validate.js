@@ -2,6 +2,16 @@
   $(document).ready(function() {
     'use strict';
 
+    // inputmask for Phone Number
+    $('#phone').inputmask({'mask': '(999) 999-99-99'});
+
+    // inputmask for Credit Card Number
+    $('#credit-card').inputmask({'mask': '9999 - 9999 - 9999 - 9999'});
+
+    // inputmask for Expiration Date of Credit Card
+    $('#ex-date').inputmask({'mask': '99 / 99'});
+
+    // automatically change first letter from lowercase to uppercase
     $('#fname, #lname').on('keypress', function() {
       const valueF = $('#fname').val();
       const valueL = $('#lname').val();
@@ -12,6 +22,8 @@
     });
 
     // additional methods for jQuery Validation
+
+    // Only letters + polish letters
     jQuery.validator.addMethod(
       'lettersonly', function(value, element) {
         return (
@@ -24,6 +36,7 @@
       'Only letters'
     );
 
+    // email validation
     jQuery.validator.addMethod(
       'customEmail',
       function(value, element) {
@@ -39,6 +52,7 @@
       'Please enter valid email address'
     );
 
+    // phone validation
     jQuery.validator.addMethod(
       'customPhone',
       function(value, element) {
@@ -54,6 +68,7 @@
       'Please enter valid format (xxx) xxx-xx-xx'
     );
 
+    // VISA card number validation
     jQuery.validator.addMethod(
       'customVisaNumber',
       function(value, element) {
@@ -61,14 +76,16 @@
           // eslint-disable-next-line no-invalid-this
           this.optional(element) ||
           // eslint-disable-next-line max-len
-          /^[0-9]{4}\s\-\s[0-9]{4}\s\-\s[0-9]{4}\s\-\s[0-9]{4}$/i.test(
+          // Visa card numbers start with a 4.
+          /^4[0-9]{3}\s\-\s[0-9]{4}\s\-\s[0-9]{4}\s\-\s[0-9]{4}$/g.test(
             value
           )
         );
       },
-      'Please enter valid format xxxx - xxxx - xxxx - xxxx'
+      'Please enter valid format 4xxx - xxxx - xxxx - xxxx'
     );
 
+    // expiration date validation
     jQuery.validator.addMethod(
       'customExpirationDate',
       function(value, element) {
@@ -84,6 +101,7 @@
       'Please enter valid format MM / YY'
     );
 
+    // FORM validation
     const mainForm = $('#check_out_form').validate({
       rules: {
         firstname: {
@@ -113,37 +131,37 @@
       errorElement: 'span',
       messages: {
         firstname: {
-          required: 'Required filed',
+          required: 'Required field',
           lettersonly: 'Only letters',
         },
         lastname: {
-          required: 'Required filed',
+          required: 'Required field',
           lettersonly: 'Only letters',
         },
         email: {
-          required: 'Required filed',
+          required: 'Required field',
         },
         country: {
-          required: 'Required filed',
+          required: 'Required field',
         },
         postal: {
-          required: 'Required filed',
-          digits: 'Only digits',
+          required: 'Required field',
+          digits: 'Only 5 digits',
           rangelength: 'Please enter exactly 5 digits',
         },
         phone: {
-          required: 'Required filed',
+          required: 'Required field',
         },
         creditcard: {
-          required: 'Required filed',
+          required: 'Required field',
         },
         scode: {
-          required: 'Required filed',
-          digits: 'Only digits',
+          required: 'Required field',
+          digits: 'Only 3 digits',
           rangelength: 'Please enter exactly 3 digits',
         },
         exdate: {
-          required: 'Required filed',
+          required: 'Required field',
         },
       },
       highlight(element) {
