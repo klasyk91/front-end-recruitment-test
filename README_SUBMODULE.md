@@ -8,7 +8,7 @@ Please clone the repo by using `git clone` command.<br />
 Please use `yarn install` command to install all the needed libraries and dependencies.<br />
 !IMPORTANT! Please use `git submodule update --init --recursive` to pull the files for submodule and `git pull --recurse-submodules` to update submodule.<br />
 Please use `gulp serve` command in order to see the [localhost](http://localhost:3000) version ready to develop (please use Node.js - v10.20.1).<br />
-In case you are using another version of Node.js, the best solution for switching the Node version is installing the [Node Version Manager](https://github.com/nvm-sh/nvm#installing-and-updating) and then use following commands to install and use a specific version of Node.js: `nvm install 10` and `nvm use 10` for OSX system or `nodist + 10` and `nodist use 10` for Windows system. To make sure you are using right Node version please use this comand `node -v`.<br />
+In case you are using another version of Node.js, the best solution for switching the Node version is installing the [Node Version Manager](https://github.com/nvm-sh/nvm#installing-and-updating) and then use following commands to install and use a specific version of Node.js: `nvm install 10` and `nvm use 10` for OSX system or `nodist + 10` and `nodist use 10` for Windows system. To make sure you are using right Node version please use this comand `node -v`.<br /><br />
 Or check out this website [Using a Node Version Manager](http://npm.github.io/installation-setup-docs/installing/using-a-node-version-manager.html).
 
 ## Regarding Task 1
@@ -26,8 +26,8 @@ I used the following tools: Adobe Photoshop (eyedropper, slice, text) to take al
 I have added a separate file for FORM styles in `/app/styles/sass/checkout_form.scss`.<br />
 I have prepared all the structure/skeleton of the checkout form in `submodule.html`.<br />
 The RWD has been implemented too.<br />
-It has been tested on Firefox, Safari, Chrome and Safari Mobile & Chrome mobile.<br />
-Regarding `SELECT` field, in this case field called `Country`, there is no solution to improve the styles according to the design without using JavaScript. All the web browser just rendering this type of field with their own rules/styles. We are not able to overtight that settings via CSS.<br />
+It has been tested on Firefox, Safari, Chrome, Microsoft Edge and Safari Mobile & Chrome mobile.<br />
+Regarding `SELECT` field, in this case field called `Country`, there is no solution to improve the styles according to the design without using JavaScript. All the web browser just rendering this type of field with their own rules/styles. We are not able to overright that settings via CSS.<br />
 If it's needed I can improve the select field by using jQuery library called [SELECT2](https://select2.org/) in the future.<br />
 
 ---
@@ -40,10 +40,10 @@ All the JS code for validation you can find in `/app/scripts/form-validate/form-
 ---
 
 ## About validation
-`First name` & `Last Name` fields allows for using:
+`First name` & `Last Name` fields allow for using:
 * Polish letters
 * Only letters
-* First letter is sutmatically change into uppercase
+* First letter is automatically change into uppercase
 
 `Email` field allows for using:
 * Valid email address according regular expression
